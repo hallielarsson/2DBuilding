@@ -7,11 +7,13 @@ public class NodeManager : MonoBehaviour {
 	public List<MapNodeScript> nodes = new List<MapNodeScript>();
 	public Dictionary<MapNodeScript, bool> nodeSet = new Dictionary<MapNodeScript, bool>();
 	public MapNodeScript topLeftNode;
+	public int rowCount = 10;
+	public int colCount = 10;
 	public MapNodeScript bottomRightNode;
 
 	// Use this for initialization
 	void Start () {
-		MakeGrid (topLeftNode, bottomRightNode, 10, 10);
+		MakeGrid (topLeftNode, bottomRightNode, colCount, rowCount);
 		nodes.AddRange (GetComponentsInChildren<MapNodeScript> ());
 	}
 	
